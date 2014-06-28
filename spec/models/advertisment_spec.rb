@@ -9,7 +9,31 @@ RSpec.describe Advertisment, :type => :model do
     adv_attr_list.each do |attr|
       it { expect(adv).to respond_to(attr) }
     end 
+  end
 
+  describe 'with specific offer type' do
+    before { adv.offer_type = :day }
+
+    # category validation depending on Conformity table. see lib/other/adv_conformity.yml
+    it 'and invalid category' do
+      adv.category = :ijs
+      expect(adv).not_to be_valid
+    end
+
+    it 'and valid category' do
+      adv.category = :flat
+      expect(adv).to be_valid
+    end
+
+    it 'and valid property_type' do
+      adv.property_type = :residental
+      expect(adv).to be_valid
+    end
+
+    it 'and valid property_type' do
+      adv.property_type = :commerce
+      expect(adv).not_to be_valid
+    end
   end
 
 end

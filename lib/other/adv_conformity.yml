@@ -1,0 +1,70 @@
+sale:
+  - newbuild
+  - flat
+  - house
+  - ijs
+  - room
+  - garage
+  - office
+  - trade
+  - storage
+  - cafe
+  - land
+  - free_appointment
+
+for_rent:
+  - flat
+  - house
+  - room
+  - garage
+  - office
+  - trade
+  - storage
+  - cafe
+  - land
+  - free_appointment
+
+day:
+  - flat
+  - house
+  - room
+
+buy:
+  - newbuild
+  - flat
+  - house
+  - ijs
+  - room
+  - garage
+  - office
+  - trade
+  - storage
+  - cafe
+  - land
+  - free_appointment
+
+rent:
+  - flat
+  - house
+  - room
+  - garage
+  - office
+  - trade
+  - storage
+  - cafe
+  - land
+  - free_appointment
+
+residental:
+  - sale
+  - rent
+  - for_rent
+  - day
+  - buy
+
+commerce:
+  - sale
+  - rent
+  - buy
+  - for_rent
+
