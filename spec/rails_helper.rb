@@ -41,3 +41,71 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 end
+
+def adv_attr_list
+  %i(
+    offer_type
+    property_type
+    category
+
+    created_at
+    updated_at
+    expire_date
+    payed_adv
+    manually_added
+    distance
+    time_on_transport
+    time_on_foot
+    sales_agent
+    name
+    phone
+    agent_category    	
+    organization
+    agency_id
+    currency
+    period
+    space_unit
+    not_for_agents
+
+    floor_from
+    floor_to
+    floor_cnt_from
+    floor_cnt_to
+    space_from
+    space_to
+    space_unit
+    outdoors_space_from
+    outdoors_space_to
+    outdoors_space_unit
+    rooms
+    price_from
+    price_to
+    unit_price_from
+    unit_price_to
+    outdoors_unit_price_from
+    outdoors_unit_price_to
+    mortgage
+    keywords
+
+    location_name
+    location_id
+    country_name
+    country_id
+    region_name
+    region_id
+    district_name
+    district_id
+    locality_name
+    locality_id
+    sub_locality_name
+    sub_locality_id
+    non_admin_sub_locality
+    address_id
+    address_name
+    direction_id
+    direction_name
+    metro_id
+    metro_name
+
+  )
+end

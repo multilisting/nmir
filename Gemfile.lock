@@ -107,6 +107,8 @@ GEM
     pg (0.17.1)
     polyglot (0.3.5)
     rack (1.5.2)
+    rack-mini-profiler (0.9.2)
+      rack (>= 1.1.3)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.0)
@@ -209,6 +211,7 @@ DEPENDENCIES
   lol_dba
   mini_magick
   pg
+  rack-mini-profiler
   rails (= 4.1.0)
   rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)

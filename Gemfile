@@ -37,6 +37,9 @@ gem 'cancan'
 gem 'carrierwave'
 gem 'mini_magick'
 
+# tools
+gem 'rack-mini-profiler'
+
 group :production do
   # Use unicorn as the app server
   gem 'unicorn'
