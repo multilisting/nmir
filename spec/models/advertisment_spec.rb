@@ -36,6 +36,20 @@ RSpec.describe Advertisment, :type => :model do
     end
   end
 
+  describe 'has required fields' do
+    it 'and with filled fields' do
+      expect(adv).to be_valid
+    end
+
+    # checks presence of all fields, specified in a file. see lib/other/presense_fields.yml
+    AdvValidation::PRESENCE_FIELDS.each do |field|
+      it "and without #{field}" do
+        adv[field] = nil
+        expect(adv).not_to be_valid
+      end
+    end
+  end
+
 end
 
 def new_adv
@@ -43,6 +57,7 @@ def new_adv
     offer_type: 1,
     property_type: 1,
     category: 1,
+    currency: 1,
 
     expire_date: (DateTime.now + 2.days),
     distance: 100,
@@ -54,7 +69,6 @@ def new_adv
     agent_category: 1,    	
     organization: 'asd',
     agency_id: 1,
-    currency: 1,
     period: 1,
     space_unit: 'sd',
     not_for_agents: true,
