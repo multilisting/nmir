@@ -5,6 +5,7 @@ class Advertisment < ActiveRecord::Base
   validate :category_conformity
   validate :propery_type_conformity
 
+    
   # Enums
   include AdvEnums
   
