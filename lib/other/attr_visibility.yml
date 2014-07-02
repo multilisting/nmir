@@ -1,161 +1,343 @@
-newbuild:
-  - floor_from
-  - floor_to
-  - floor_cnt_from
-  - floor_cnt_to
-  - space_from
-  - space_to
-  - space_unit
-  - rooms
-  - price_from
-  - price_to
-  - unit_price_from
-  - unit_price_to
-  - currency
-  - not_for_agents
-  - mortgage
+offer:
+  newbuild:
+    - floor_from
+    - floor_cnt_from
+    - space_from
+    - space_unit
+    - rooms
+    - price_from
+    - unit_price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
 
-flat:
-  - floor_from
-  - floor_to
-  - floor_cnt_from
-  - floor_cnt_to
-  - space_from
-  - space_to
-  - space_unit
-  - rooms
-  - price_from
-  - price_to
-  - unit_price_from
-  - unit_price_to
-  - currency
-  - not_for_agents
-  - mortgage
+  flat:
+    - floor_from
+    - floor_cnt_from
+    - space_from
+    - space_unit
+    - rooms
+    - price_from
+    - unit_price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
+
+  house:
+    - space_from
+    - space_unit
+    - outdoors_space_from
+    - outdoors_space_unit
+    - price_from
+    - unit_price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
 
 
-house:
-  - space_from
-  - space_to
-  - space_unit
-  - outdoors_space_from
-  - outdoors_space_to
-  - outdoors_space_unit
-  - price_from
-  - price_to
-  - unit_price_from
-  - unit_price_to
-  - currency
-  - not_for_agents
-  - mortgage
+  ijs:
+    - outdoors_space_from
+    - outdoors_space_unit
+    - price_from
+    - outdoors_unit_price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
+    
+  room:
+    - floor_from
+    - floor_cnt_from
+    - space_from
+    - space_unit
+    - rooms
+    - price_from
+    - unit_price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
 
-ijs:
-  - outdoors_space_from
-  - outdoors_space_to
-  - outdoors_space_unit
-  - price_from
-  - price_to
-  - outdoors_unit_price_from
-  - outdoors_unit_price_to
-  - currency
-  - not_for_agents
-  - mortgage
-  
-room:
-  - floor_from
-  - floor_to
-  - floor_cnt_from
-  - floor_cnt_to
-  - space_from
-  - space_to
-  - space_unit
-  - rooms
-  - price_from
-  - price_to
-  - unit_price_from
-  - unit_price_to
-  - currency
-  - not_for_agents
-  - mortgage
+  garage:
+    - price_from
+    - unit_price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
 
-garage:
-  - price_from
-  - price_to
-  - unit_price_from
-  - unit_price_to
-  - currency
-  - not_for_agents
-  - mortgage
+  office:
+    - space_from
+    - space_unit
+    - price_from
+    - unit_price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
 
-office:
-  - space_from
-  - space_to
-  - space_unit
-  - price_from
-  - price_to
-  - unit_price_from
-  - unit_price_to
-  - currency
-  - not_for_agents
-  - mortgage
+  trade:
+    - space_from
+    - space_unit
+    - price_from
+    - unit_price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
 
-trade:
-  - space_from
-  - space_to
-  - space_unit
-  - price_from
-  - price_to
-  - unit_price_from
-  - unit_price_to
-  - currency
-  - not_for_agents
-  - mortgage
+  storage:
+    - space_from
+    - space_unit
+    - outdoors_space_from
+    - outdoors_space_unit
+    - price_from
+    - unit_price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
 
-storage:
-  - space_from
-  - space_to
-  - space_unit
-  - outdoors_space_from
-  - outdoors_space_to
-  - outdoors_space_unit
-  - price_from
-  - price_to
-  - unit_price_from
-  - unit_price_to
-  - currency
-  - not_for_agents
-  - mortgage
+  cafe:
+    - space_from
+    - space_unit
+    - outdoors_space_from
+    - outdoors_space_unit
+    - price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
 
-cafe:
-  - space_from
-  - space_to
-  - space_unit
-  - outdoors_space_from
-  - outdoors_space_to
-  - outdoors_space_unit
-  - price_from
-  - price_to
-  - currency
-  - not_for_agents
-  - mortgage
+  land:
+    - outdoors_space_from
+    - outdoors_space_unit
+    - price_from
+    - outdoors_unit_price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
 
-land:
-  - outdoors_space_from
-  - outdoors_space_to
-  - outdoors_space_unit
-  - price_from
-  - price_to
-  - outdoors_unit_price_from
-  - outdoors_unit_price_to
-  - currency
-  - not_for_agents
-  - mortgage
+  free_appointment:
+    - space_from
+    - space_unit
+    - price_from
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    - landmark
 
-free_appointment:
-  - space_from
-  - space_to
-  - space_unit
-  - price_from
-  - price_to
-  - currency
-  - not_for_agents
-  - mortgage
+demand:
+  newbuild:
+    - floor_from
+    - floor_to
+    - floor_cnt_from
+    - floor_cnt_to
+    - space_from
+    - space_to
+    - space_unit
+    - rooms
+    - price_from
+    - price_to
+    - unit_price_from
+    - unit_price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+
+  flat:
+    - floor_from
+    - floor_to
+    - floor_cnt_from
+    - floor_cnt_to
+    - space_from
+    - space_to
+    - space_unit
+    - rooms
+    - price_from
+    - price_to
+    - unit_price_from
+    - unit_price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+
+  house:
+    - space_from
+    - space_to
+    - space_unit
+    - outdoors_space_from
+    - outdoors_space_to
+    - outdoors_space_unit
+    - price_from
+    - price_to
+    - unit_price_from
+    - unit_price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+
+
+  ijs:
+    - outdoors_space_from
+    - outdoors_space_to
+    - outdoors_space_unit
+    - price_from
+    - price_to
+    - outdoors_unit_price_from
+    - outdoors_unit_price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+    
+  room:
+    - floor_from
+    - floor_to
+    - floor_cnt_from
+    - floor_cnt_to
+    - space_from
+    - space_to
+    - space_unit
+    - rooms
+    - price_from
+    - price_to
+    - unit_price_from
+    - unit_price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+
+  garage:
+    - price_from
+    - price_to
+    - unit_price_from
+    - unit_price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+
+  office:
+    - space_from
+    - space_to
+    - space_unit
+    - price_from
+    - price_to
+    - unit_price_from
+    - unit_price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+
+  trade:
+    - space_from
+    - space_to
+    - space_unit
+    - price_from
+    - price_to
+    - unit_price_from
+    - unit_price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+
+  storage:
+    - space_from
+    - space_to
+    - space_unit
+    - outdoors_space_from
+    - outdoors_space_to
+    - outdoors_space_unit
+    - price_from
+    - price_to
+    - unit_price_from
+    - unit_price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+
+  cafe:
+    - space_from
+    - space_to
+    - space_unit
+    - outdoors_space_from
+    - outdoors_space_to
+    - outdoors_space_unit
+    - price_from
+    - price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+
+  land:
+    - outdoors_space_from
+    - outdoors_space_to
+    - outdoors_space_unit
+    - price_from
+    - price_to
+    - outdoors_unit_price_from
+    - outdoors_unit_price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment
+
+  free_appointment:
+    - space_from
+    - space_to
+    - space_unit
+    - price_from
+    - price_to
+    - currency
+    - not_for_agents
+    - mortgage
+    - comment
+    - private_comment

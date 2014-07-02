@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627094228) do
+ActiveRecord::Schema.define(version: 20140702112053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,10 @@ ActiveRecord::Schema.define(version: 20140627094228) do
     t.string   "metro_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "landmark"
+    t.text     "comment"
+    t.text     "private_comment"
+    t.integer  "adv_type"
   end
 
   create_table "users", force: true do |t|

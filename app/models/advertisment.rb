@@ -10,7 +10,7 @@ class Advertisment < ActiveRecord::Base
   include AdvEnums
   
   def allowed_attributes
-    AdvConformity::ATTR_VISIBILITY[category]
+    AdvConformity::ATTR_VISIBILITY[adv_type][category] rescue []
   end
 
   private

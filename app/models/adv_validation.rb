@@ -17,7 +17,9 @@ module AdvValidation
       :unit_price_from, :unit_price_to, :outdoors_unit_price_from, :outdoors_unit_price_to,
       :greater_than_or_equal_to => 0.01, allow_nil: true
 
-    validates :floor_from, :floor_cnt_from, :space_from, :outdoors_space_from, :price_from, :unit_price_from, :outdoors_unit_price_from, :'adv_validation/attribute_range' => true
+    validates :floor_from, :floor_cnt_from, :space_from, 
+      :outdoors_space_from, :price_from, :unit_price_from, 
+      :outdoors_unit_price_from, :'adv_validation/attribute_range' => true
   end
   
   class AttributeRangeValidator < ActiveModel::EachValidator

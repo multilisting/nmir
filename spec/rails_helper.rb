@@ -48,6 +48,7 @@ module AdvSpecHelper
       offer_type
       property_type
       category
+      adv_type
 
       created_at
       updated_at
@@ -67,6 +68,9 @@ module AdvSpecHelper
       period
       space_unit
       not_for_agents
+      landmark
+      comment
+      private_comment
 
       floor_from
       floor_to
@@ -122,6 +126,7 @@ module AdvSpecHelper
       property_type: 1,
       category: 1,
       currency: 1,
+      adv_type: 1,
 
       expire_date: (DateTime.now + 2.days),
       distance: 100,
@@ -136,6 +141,9 @@ module AdvSpecHelper
       period: 1,
       space_unit: 'sd',
       not_for_agents: true,
+      landmark: 'zxcvz',
+      comment: 'afss',
+      private_comment: 'asd',
 
       floor_from: 1,
       floor_to: 4,

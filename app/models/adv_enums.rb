@@ -24,6 +24,8 @@ module AdvEnums
 
     enum property_type: [:commerce, :residental]
 
+    enum adv_type: [:demand, :offer]
+
     enum currency: [:RUR, :RUB, :EUR, :USD, :UAH, :BYR, :KZT]
 
   end
