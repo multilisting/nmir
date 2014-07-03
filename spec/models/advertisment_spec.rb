@@ -56,23 +56,32 @@ RSpec.describe Advertisment, :type => :model do
     # price_from < price_to
     AdvSpecHelper.from_methods.each do |from_method|
       
+      # compute _to method. price_from becomes price_to
+      let(:to_method) { from_method.match(/(\w+)_from/)[1] + '_to' }
+
       it "with #{from_method} greater than it's _to attribute" do
-        # compute _to method. price_from becomes price_to
-        to_method = from_method.match(/(\w+)_from/)[1] + '_to'
         adv[from_method] = 1000
 
         expect(adv).not_to be_valid
-        
       end
 
       it "when _to attribute set to nil" do
-        # compute _to method. price_from becomes price_to
-        to_method = from_method.match(/(\w+)_from/)[1] + '_to'
         adv[to_method] = nil
 
         # if price_to is nil, then we should skip this validation
         expect(adv).to be_valid
-        
+      end
+
+      # should respond to attr without '_from' - price_for - price 
+      it do 
+        method_without_from = from_method.match(/(\w+)_from/)[1].to_sym
+        expect(adv).to respond_to(method_without_from)
+      end
+
+      # and should return price_from value
+      it do 
+        method_without_from = from_method.match(/(\w+)_from/)[1].to_sym
+        expect(adv.send(method_without_from)).to eq(adv.send(from_method.to_sym))
       end
     end
   end

@@ -13,6 +13,13 @@ class Advertisment < ActiveRecord::Base
     AdvConformity::ATTR_VISIBILITY[adv_type][category] rescue []
   end
 
+  # define methods like :price, from pirce_from attr
+  attribute_names.grep(/_from/).each do |from_method|
+    method_name = from_method.match(/(\w+)_from/)[1].to_sym
+
+    define_method(method_name) { return self[from_method] }
+  end
+
   private
 
   def category_conformity
