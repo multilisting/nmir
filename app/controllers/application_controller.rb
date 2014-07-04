@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
     @current_user = current_user
   end
 
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) do |u| 
+      u.permit(:name, :phone, :phones, :email, :password, :password_confirmation, :role)
+    end
+  end
 end

@@ -15,7 +15,10 @@ module ApplicationHelper
     if @current_user
       link_to @current_user.email, destroy_user_session_path, method: :delete, title: 'Выйти'
     else
-      link_to 'Вход', '#', 'data-toggle' => "modal", 'data-target' => ".login-modal"
+      content_tag :button, class: "btn navbar-btn btn-default", 'data-toggle' => "modal", 'data-target' => ".bs-example-modal-sm" do
+        content_tag :i, 'Войти', class: "fa fa-sign-in"
+      end
+
     end
   end
 end
