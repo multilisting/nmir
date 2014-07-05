@@ -48,6 +48,8 @@ class Phone < ActiveRecord::Base
 
     if self.number.length == 7
       self.number = "+7863#{self.number}"
+    elsif self.number.length == 10
+      self.number = "+7#{self.number}"
     end
 
     self.number = convert_city_phones(self.number)

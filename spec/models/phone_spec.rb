@@ -119,6 +119,12 @@ RSpec.describe Phone, :type => :model do
         expect(phone.number).to eq('+78632441111') 
       end
 
+      it 'with 10-character number' do
+        phone.original = '908 508-5077'
+        phone.save
+        expect(phone.number).to eq('+79085085077')
+      end
+
     end
     
   end

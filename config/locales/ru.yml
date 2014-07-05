@@ -1,0 +1,7 @@
+ru:
+  activerecord:
+    attributes:
+      user:
+        role:
+          owner: частное лицо
+          agent: агент, риелтор
