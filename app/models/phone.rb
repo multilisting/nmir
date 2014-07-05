@@ -6,8 +6,6 @@ class Phone < ActiveRecord::Base
 
   before_validation :normalize
 
-
-
   private 
 
   def convert_city_phones(num)
@@ -15,6 +13,26 @@ class Phone < ActiveRecord::Base
       # Megaphone
       when /^\+7863226/
         num.gsub /863/, '928'
+      when /^\+7863229/
+        num.gsub /863/, '928'
+      when /^\+7863296/
+        num.gsub /863/, '928'
+      when /^\+7863270/
+        num.gsub /863/, '928'
+      when /^\+7863279/
+        num.gsub /863/, '928'
+      #MTS
+      when /^\+7863275/
+        num.gsub /863275/, '918555'
+      when /^\+7863294/
+        num.gsub /863294/, '918554'
+      when /^\+7863298/
+        num.gsub /863298/, '918558'
+      #Beeline
+      when /^\+7863256/
+        num.gsub /863256/, '903406'
+      when /^\+7863221/
+        num.gsub /863221/, '903401'
       else
         self.number
     end

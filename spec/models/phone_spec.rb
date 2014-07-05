@@ -36,6 +36,39 @@ RSpec.describe Phone, :type => :model do
       end
     end
 
+    describe 'MTS' do
+      it '8-863-275-* >> 8-918-555-*' do
+        phone.original = '8-863-275-11-22'
+        phone.save
+        expect(phone.number).to eq('+79185551122')
+      end
+
+      it '8-863-294-* >> 8-918-554-*' do
+        phone.original = '8-863-294-11-22'
+        phone.save
+        expect(phone.number).to eq('+79185541122')
+      end
+      
+      it '8-863-298-* >> 8-918-558-*' do
+        phone.original = '8-863-298-11-22'
+        phone.save
+        expect(phone.number).to eq('+79185581122')
+      end
+    end
+
+    describe 'Beeline' do
+      it '8-863-256-* >> 8-903-406-*' do
+        phone.original = '8-863-256-11-22'
+        phone.save
+        expect(phone.number).to eq('+79034061122')
+      end
+
+      it '8-863-221-* >> 8-903-401-*' do
+        phone.original = '8-863-221-11-22'
+        phone.save
+        expect(phone.number).to eq('+79034011122')
+      end
+    end
   end
     
   describe 'with existing number' do
@@ -78,6 +111,12 @@ RSpec.describe Phone, :type => :model do
         # добавляем два вначале, а потом преобразуем к номальному номеру
         phone.save
         expect(phone.number).to eq('+79282261111') 
+      end
+
+      it 'normal number wthout city/mobile code and frist "2" ' do
+        phone.original = '44- 11 - 11'
+        phone.save
+        expect(phone.number).to eq('+78632441111') 
       end
 
     end
