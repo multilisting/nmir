@@ -1,0 +1,16 @@
+ru:
+  activerecord:
+    attributes:
+      user:
+        role:
+          owner: частное лицо
+          agent: агент, риелтор
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        name: Имя
+        phones: Телефоны
+      
+      phone:
+        original: Номер телефона
+        number: Номер телефона
+

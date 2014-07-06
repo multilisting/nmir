@@ -23,18 +23,19 @@
                 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
                   = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'mail@example.com', required: true
                   = f.password_field :password, autocomplete: "off", class: 'form-control', required: true, placeholder: "********"
-                  = f.label :remember_me, class: 'checkbox' do
-                    = f.check_box :remember_me, checked: true
-                    | запомнить меня
+                  .row
+                    = f.label :remember_me, class: 'checkbox' do
+                      = f.check_box :remember_me, checked: true
+                      | запомнить меня
                   = f.button class: 'btn btn-primary' do
                     i.fa.fa-sign-in
                     | Войти
-                span
-                  | \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  a href="#" 
-                    small
-                      i.fa.fa-refresh
-                      | \&nbsp;cбросить пароль
+                  span
+                    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    a href="#" 
+                      small
+                        i.fa.fa-refresh
+                        | &nbsp;cбросить пароль
                 br
                   p
                     b зайти с помощью:
