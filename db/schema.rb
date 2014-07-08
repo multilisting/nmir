@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140704074923) do
+ActiveRecord::Schema.define(version: 20140708095849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: true do |t|
+    t.integer "street_id"
+    t.string  "title"
+    t.string  "translit"
+  end
+
+  create_table "admin_areas", force: true do |t|
+    t.integer "city_id"
+    t.string  "title"
+    t.string  "translit"
+  end
 
   create_table "advertisments", force: true do |t|
     t.integer  "offer_type",                                                        null: false
@@ -81,6 +93,33 @@ ActiveRecord::Schema.define(version: 20140704074923) do
     t.integer  "adv_type"
   end
 
+  create_table "cities", force: true do |t|
+    t.integer "district_id"
+    t.integer "region_id"
+    t.string  "title"
+    t.string  "translit"
+  end
+
+  create_table "districts", force: true do |t|
+    t.integer "region_id"
+    t.string  "title"
+    t.string  "translit"
+  end
+
+  create_table "landmarks", force: true do |t|
+    t.string  "location_type"
+    t.integer "location_id"
+    t.string  "title"
+    t.string  "translit"
+  end
+
+  create_table "non_admin_areas", force: true do |t|
+    t.integer "city_id"
+    t.integer "admin_area_id"
+    t.string  "title"
+    t.string  "translit"
+  end
+
   create_table "phones", force: true do |t|
     t.string  "number"
     t.string  "original"
@@ -88,6 +127,18 @@ ActiveRecord::Schema.define(version: 20140704074923) do
   end
 
   add_index "phones", ["user_id"], name: "index_phones_on_user_id", using: :btree
+
+  create_table "regions", force: true do |t|
+    t.string "title"
+    t.string "translit"
+  end
+
+  create_table "streets", force: true do |t|
+    t.integer "location_id"
+    t.integer "location_type"
+    t.string  "title"
+    t.string  "translit"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
