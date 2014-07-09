@@ -1,0 +1,19 @@
+region:
+  id: 1
+  title: Ростовская область
+
+district:
+  id: 2
+  title: Кущевский район
+  location_id: 1
+
+city:
+  id: 3
+  title: Ростов
+  location_id: 2
+
+street:
+  id: 4
+  title: Ленина
+  location_id: 3
+

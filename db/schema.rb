@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140704074923) do
+ActiveRecord::Schema.define(version: 20140709072936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,16 @@ ActiveRecord::Schema.define(version: 20140704074923) do
     t.text     "private_comment"
     t.integer  "adv_type"
   end
+
+  create_table "locations", force: true do |t|
+    t.string  "title"
+    t.string  "translit"
+    t.integer "location_type"
+    t.integer "location_id"
+  end
+
+  add_index "locations", ["location_id"], name: "index_locations_on_location_id", using: :btree
+  add_index "locations", ["location_type"], name: "index_locations_on_location_type", using: :btree
 
   create_table "phones", force: true do |t|
     t.string  "number"

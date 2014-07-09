@@ -41,6 +41,7 @@ gem 'mini_magick'
 
 # tools
 gem 'rack-mini-profiler'
+gem 'russian', '~> 0.6.0'
 
 group :production do
   # Use unicorn as the app server
