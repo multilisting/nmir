@@ -17,3 +17,23 @@ street:
   title: Ленина
   location_id: 3
 
+address:
+  id: 5
+  title: "к.5"
+  location_id: 4
+
+admin_area:
+  id: 6
+  title: asdgsadg
+  location_id: 2
+
+non_admin_area:
+  id: 7
+  title: asdgsadg
+  location_id: 2
+
+landmark:
+  id: 8
+  title: В центре
+
+

@@ -68,7 +68,6 @@ module AdvSpecHelper
       period
       space_unit
       not_for_agents
-      landmark
       comment
       private_comment
 
@@ -91,26 +90,6 @@ module AdvSpecHelper
       outdoors_unit_price_to
       mortgage
       keywords
-
-      location_name
-      location_id
-      country_name
-      country_id
-      region_name
-      region_id
-      district_name
-      district_id
-      locality_name
-      locality_id
-      sub_locality_name
-      sub_locality_id
-      non_admin_sub_locality
-      address_id
-      address_name
-      direction_id
-      direction_name
-      metro_id
-      metro_name
 
     )
   end
@@ -141,7 +120,6 @@ module AdvSpecHelper
       period: 1,
       space_unit: 'sd',
       not_for_agents: true,
-      landmark: 'zxcvz',
       comment: 'afss',
       private_comment: 'asd',
 
@@ -165,25 +143,6 @@ module AdvSpecHelper
       mortgage: false,
       keywords: 'asd zxc',
 
-      location_name: 'asd',
-      location_id: 1,
-      country_name: 'asd',
-      country_id: 2,
-      region_name: 'zxc',
-      region_id: 2,
-      district_name: 'zxc',
-      district_id: 3,
-      locality_name: 'qwe',
-      locality_id: 4,
-      sub_locality_name: 'asd',
-      sub_locality_id: 4,
-      non_admin_sub_locality: 'asd',
-      address_id: 2,
-      address_name: 'zcv',
-      direction_id: 2,
-      direction_name: 'fdg',
-      metro_id: 3,
-      metro_name: 'cbvx'
     })
   end
 end

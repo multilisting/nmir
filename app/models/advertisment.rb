@@ -1,11 +1,19 @@
 class Advertisment < ActiveRecord::Base
 
+  belongs_to :region,   class_name: 'Location', foreign_key: 'region_id'
+  belongs_to :district, class_name: 'Location', foreign_key: 'district_id'
+  belongs_to :city,     class_name: 'Location', foreign_key: 'city_id'
+  belongs_to :admin_area,   class_name: 'Location', foreign_key: 'admin_area_id'
+  belongs_to :non_admin_area, class_name: 'Location', foreign_key: 'non_admin_area_id'
+  belongs_to :street, class_name: 'Location', foreign_key: 'street_id'
+  belongs_to :address, class_name: 'Location', foreign_key: 'address_id'
+  belongs_to :landmark, class_name: 'Location', foreign_key: 'landmark_id'
+
   # validators
   include AdvValidation
   validate :category_conformity
   validate :propery_type_conformity
 
-    
   # Enums
   include AdvEnums
   
