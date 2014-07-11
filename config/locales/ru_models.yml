@@ -14,3 +14,27 @@ ru:
         original: Номер телефона
         number: Номер телефона
 
+      section:
+        enum_title:
+          # offer_type
+          sale: продам
+          rent: сниму
+          for_rent: сдаю
+          day: посуточно
+          buy: куплю
+
+          #category
+          newbuild: новостройку
+          flat: квартиру
+          house: дом
+          ijs: участок
+          room: комнату
+          garage: гараж
+          office: офис
+          trade: для торговли
+          storage: под склад
+          cafe: кафе
+          land: землю
+          free_appointment: общего назначения
+          
+

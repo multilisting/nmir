@@ -20,6 +20,6 @@ class Location < ActiveRecord::Base
   private
 
   def transliterate_title
-    self.translit = Russian::translit(self.title)
+    self.translit = Russian::translit(self.title).downcase
   end
 end

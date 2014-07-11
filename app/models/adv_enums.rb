@@ -2,12 +2,7 @@ module AdvEnums
 
   extend ActiveSupport::Concern
 
-  included do
-
-    # enums - add values to the end of array!
-    enum offer_type: [:sale, :rent, :for_rent, :day, :buy]
-
-    enum category: [
+  CATEGORIES = [
       :newbuild,
       :flat,
       :house,
@@ -22,9 +17,21 @@ module AdvEnums
       :free_appointment
     ]
 
+  ADV_TYPES = [:demand, :offer]
+
+  OFFER_TYPES = [:sale, :rent, :for_rent, :day, :buy]
+
+
+  included do
+
+    # enums - add values to the end of array!
+    enum offer_type: AdvEnums::OFFER_TYPES
+
+    enum category: AdvEnums::CATEGORIES
+
     enum property_type: [:commerce, :residental]
 
-    enum adv_type: [:demand, :offer]
+    enum adv_type: AdvEnums::ADV_TYPES
 
     enum currency: [:RUR, :RUB, :EUR, :USD, :UAH, :BYR, :KZT]
 

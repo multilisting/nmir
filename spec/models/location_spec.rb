@@ -8,7 +8,7 @@ RSpec.describe Location, :type => :model do
 
   it 'translit method to return transliterated title' do
     location.save
-    expect(location.translit).to eq('Rostov')
+    expect(location.translit).to eq('rostov')
   end
 
   describe 'has selfjoined relations' do
