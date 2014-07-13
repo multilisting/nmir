@@ -17,7 +17,7 @@ class Section < ActiveRecord::Base
   private
 
   def generate_title
-    self.title = "#{Section.enum_title(offer_type)} #{Section.enum_title(category)} #{location.title}".capitalize
+    self.title = "#{Section.enum_title(offer_type)} #{Section.enum_title(category)} в #{location.locative}".capitalize
   end
 
   def generate_url

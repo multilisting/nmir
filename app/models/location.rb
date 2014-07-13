@@ -17,6 +17,26 @@ class Location < ActiveRecord::Base
   # remember! add values to the end of array
   enum location_type: [:region, :district, :city, :admin_area, :non_admin_area, :street, :address, :landmark]
 
+
+  def locative
+    last_chars = self.title[-2, 2]
+
+    case last_chars
+    when /[бвгджзклмнпрсфхцчшщ]$/
+      self.title + 'е'
+    when /а$/
+      self.title.gsub(/.$/, 'е')
+    when /ое|ий|ый/
+      self.title.gsub(/ое|ий|ый/, 'ом')
+    when /ая/
+      self.title.gsub(/ая/, 'ой')
+    when /ь$/
+      self.title.gsub(/ь$/, 'и')
+    else
+      self.title
+    end
+  end
+
   private
 
   def transliterate_title
