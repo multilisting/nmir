@@ -4,7 +4,7 @@ offer:
     - floor_cnt_from
     - space_from
     - space_unit
-    - rooms
+    - room_from
     - price_from
     - unit_price_from
     - currency
@@ -19,7 +19,7 @@ offer:
     - floor_cnt_from
     - space_from
     - space_unit
-    - rooms
+    - room_from
     - price_from
     - unit_price_from
     - currency
@@ -61,7 +61,7 @@ offer:
     - floor_cnt_from
     - space_from
     - space_unit
-    - rooms
+    - room_from
     - price_from
     - unit_price_from
     - currency
@@ -164,7 +164,8 @@ demand:
     - space_from
     - space_to
     - space_unit
-    - rooms
+    - room_from
+    - room_to
     - price_from
     - price_to
     - unit_price_from
@@ -183,7 +184,8 @@ demand:
     - space_from
     - space_to
     - space_unit
-    - rooms
+    - room_from
+    - room_to
     - price_from
     - price_to
     - unit_price_from
@@ -234,7 +236,8 @@ demand:
     - space_from
     - space_to
     - space_unit
-    - rooms
+    - room_from
+    - room_to
     - price_from
     - price_to
     - unit_price_from

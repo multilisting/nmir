@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711083747) do
+ActiveRecord::Schema.define(version: 20140715043557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20140711083747) do
     t.integer  "category",                                                          null: false
     t.integer  "agent_category"
     t.integer  "currency"
-    t.integer  "period"
     t.integer  "distance"
     t.integer  "time_on_transport"
     t.integer  "time_on_foot"
@@ -31,7 +30,6 @@ ActiveRecord::Schema.define(version: 20140711083747) do
     t.integer  "floor_to"
     t.integer  "floor_cnt_from"
     t.integer  "floor_cnt_to"
-    t.integer  "rooms"
     t.datetime "expire_date"
     t.boolean  "payed_adv",                                         default: false
     t.boolean  "manually_added"
@@ -44,13 +42,13 @@ ActiveRecord::Schema.define(version: 20140711083747) do
     t.string   "space_unit"
     t.decimal  "outdoors_space_from",      precision: 15, scale: 2
     t.decimal  "outdoors_space_to",        precision: 15, scale: 2
-    t.decimal  "outdoors_space_unit",      precision: 15, scale: 2
-    t.decimal  "price_from",               precision: 15, scale: 2
-    t.decimal  "price_to",                 precision: 15, scale: 2
+    t.string   "outdoors_space_unit"
+    t.integer  "price_from"
+    t.integer  "price_to"
     t.decimal  "unit_price_from",          precision: 15, scale: 2
     t.decimal  "unit_price_to",            precision: 15, scale: 2
-    t.decimal  "outdoors_unit_price_from", precision: 15, scale: 2
-    t.decimal  "outdoors_unit_price_to",   precision: 15, scale: 2
+    t.integer  "outdoors_unit_price_from"
+    t.integer  "outdoors_unit_price_to"
     t.decimal  "space_from",               precision: 15, scale: 2
     t.decimal  "space_to",                 precision: 15, scale: 2
     t.text     "keywords"
@@ -68,6 +66,8 @@ ActiveRecord::Schema.define(version: 20140711083747) do
     t.integer  "street_id"
     t.integer  "address_id"
     t.integer  "landmark_id"
+    t.integer  "room_from"
+    t.integer  "room_to"
   end
 
   create_table "locations", force: true do |t|

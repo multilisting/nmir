@@ -1,10 +1,11 @@
 class Section < ActiveRecord::Base
   belongs_to :location
 
-  validates_presence_of :location
+  validates_presence_of :location_id
 
   enum category: AdvEnums::CATEGORIES 
   enum offer_type: AdvEnums::OFFER_TYPES
+  enum property_type: AdvEnums::PROPERTY_TYPES
 
   #delegate :title, :translit, to: :location, prefix: true
 
@@ -17,7 +18,7 @@ class Section < ActiveRecord::Base
   private
 
   def generate_title
-    self.title = "#{Section.enum_title(offer_type)} #{Section.enum_title(category)} в #{location.locative}".capitalize
+    self.title = "#{Section.enum_title(offer_type)} #{Section.enum_title(category)} в #{Russian.locative(location.title)}".capitalize
   end
 
   def generate_url

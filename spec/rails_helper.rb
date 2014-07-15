@@ -65,7 +65,6 @@ module AdvSpecHelper
       organization
       agency_id
       currency
-      period
       space_unit
       not_for_agents
       comment
@@ -81,7 +80,8 @@ module AdvSpecHelper
       outdoors_space_from
       outdoors_space_to
       outdoors_space_unit
-      rooms
+      room_from
+      room_to
       price_from
       price_to
       unit_price_from
@@ -117,7 +117,6 @@ module AdvSpecHelper
       agent_category: 1,    	
       organization: 'asd',
       agency_id: 1,
-      period: 1,
       space_unit: 'sd',
       not_for_agents: true,
       comment: 'afss',
@@ -133,7 +132,8 @@ module AdvSpecHelper
       outdoors_space_from: 100,
       outdoors_space_to: 500,
       outdoors_space_unit: 10, 
-      rooms: 11,
+      room_from: 1,
+      room_to: 4,
       price_from: 100,
       price_to: 500,
       unit_price_from: 10,

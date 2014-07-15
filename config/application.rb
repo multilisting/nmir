@@ -18,6 +18,7 @@ module Nmir
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.autoload_paths += Dir[File.join(Rails.root, "lib", "extensions", "*.rb")].each {|l| require l }
     config.i18n.default_locale = :ru
   end
 end

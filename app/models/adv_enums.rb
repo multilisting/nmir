@@ -21,6 +21,10 @@ module AdvEnums
 
   OFFER_TYPES = [:sale, :rent, :for_rent, :day, :buy]
 
+  PROPERTY_TYPES = [:commerce, :residental]
+
+  CURRENCIES = [:RUR, :RUB]
+
 
   included do
 
@@ -29,11 +33,11 @@ module AdvEnums
 
     enum category: AdvEnums::CATEGORIES
 
-    enum property_type: [:commerce, :residental]
+    enum property_type: AdvEnums::PROPERTY_TYPES
 
     enum adv_type: AdvEnums::ADV_TYPES
 
-    enum currency: [:RUR, :RUB, :EUR, :USD, :UAH, :BYR, :KZT]
+    enum currency: AdvEnums::CURRENCIES
 
   end
 end

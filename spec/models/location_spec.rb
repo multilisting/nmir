@@ -42,42 +42,42 @@ RSpec.describe Location, :type => :model do
 
   describe 'has #locative method' do
     it 'should return correct locative form' do
-      expect(location.locative).to eq('Ростове')
+      expect(Russian.locative(location.title)).to eq('Ростове')
     end
     
     it 'should return correct locative form' do
       location.title = 'Москва'
-      expect(location.locative).to eq('Москве')
+      expect(Russian.locative(location.title)).to eq('Москве')
     end
     
     it 'should return correct locative form' do
       location.title = 'Синявское'
-      expect(location.locative).to eq('Синявском')
+      expect(Russian.locative(location.title)).to eq('Синявском')
     end
     
     it 'should return correct locative form' do
       location.title = 'Новоминская'
-      expect(location.locative).to eq('Новоминской')
+      expect(Russian.locative(location.title)).to eq('Новоминской')
     end
     
     it 'should return correct locative form' do
       location.title = 'Сочи'
-      expect(location.locative).to eq('Сочи')
+      expect(Russian.locative(location.title)).to eq('Сочи')
     end
 
     it 'should return correct locative form' do
       location.title = 'Комсомольский'
-      expect(location.locative).to eq('Комсомольском')
+      expect(Russian.locative(location.title)).to eq('Комсомольском')
     end
 
     it 'should return correct locative form' do
       location.title = 'Казань'
-      expect(location.locative).to eq('Казани')
+      expect(Russian.locative(location.title)).to eq('Казани')
     end
 
     it 'should return correct locative form' do
       location.title = 'Радужный'
-      expect(location.locative).to eq('Радужном')
+      expect(Russian.locative(location.title)).to eq('Радужном')
     end
   end
 
