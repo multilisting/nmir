@@ -16,6 +16,8 @@ class Advertisment < ActiveRecord::Base
 
   # Enums
   include AdvEnums
+
+  after_create :generate_sections
   
   def allowed_attributes
     AdvConformity::ATTR_VISIBILITY[adv_type][category] rescue []
@@ -28,7 +30,45 @@ class Advertisment < ActiveRecord::Base
     define_method(method_name) { return self[from_method] }
   end
 
+  def locations(without_nils = true)
+    HashWithIndifferentAccess.new({
+      region: region_id, district: district_id, city: city_id, admin_area: admin_area_id,
+      non_admin_area: non_admin_area_id, street: street_id, address: address_id, landmark: landmark_id
+    }).delete_if {|k, v| v.nil? }
+  end
+
   private
+
+  def generate_sections
+    locs = self.locations
+    
+    locs.each do |loc_title, loc_id|
+      # find or create by offer_type + category + each location node, setted in this advertisment
+      Section.find_or_create_by(offer_type: offer_type, category: category, location_id: loc_id )
+
+      # find or create by offer_type + category + each location node, setted in this advertisment
+      Section.find_or_create_by(property_type: property_type, offer_type: offer_type, location_id: loc_id )
+
+      # find or create by location node
+      Section.find_or_create_by(location_id: loc_id, offer_type: nil, property_type: nil, category: nil )
+
+      loc = self.send(:loc_title)
+      
+      # if location is not parent (region)
+      if !loc.nil? && !loc.parent?
+        loc_parents = Location.parent_locations(loc)
+
+        # do the same for each parent node
+        loc_parents.each do |node|
+          Section.find_or_create_by(offer_type: offer_type, category: category, location_id: node.id)
+          Section.find_or_create_by(property_type: property_type, offer_type: offer_type, location_id: node.id )
+
+          Section.find_or_create_by(location_id: node.id, offer_type: nil, property_type: nil, category: nil )
+        end
+      end
+    end
+
+  end
 
   def category_conformity
     unless AdvConformity::TYPE_CONFORMITY[self.offer_type].try(:include?, category)

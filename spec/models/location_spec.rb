@@ -40,6 +40,14 @@ RSpec.describe Location, :type => :model do
     end
   end
 
+  describe 'has some methods' do
+    let(:address) { locations(:address) }
+    it 'parent_locations method should return all parent nodes' do
+      p_l = Location.parent_locations(address)
+      expect(p_l).to be_kind_of(Array)
+    end
+  end
+
   describe 'has #locative method' do
     it 'should return correct locative form' do
       expect(Russian.locative(location.title)).to eq('Ростове')

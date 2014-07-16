@@ -1,8 +1,6 @@
 class Section < ActiveRecord::Base
   belongs_to :location
 
-  validates_presence_of :location_id
-
   enum category: AdvEnums::CATEGORIES 
   enum offer_type: AdvEnums::OFFER_TYPES
   enum property_type: AdvEnums::PROPERTY_TYPES
@@ -12,13 +10,22 @@ class Section < ActiveRecord::Base
   before_save :generate_title
   before_save :generate_url
 
-
   scope :not_empty, -> { where('advertisments_count > 0') }
 
   private
 
   def generate_title
-    self.title = "#{Section.enum_title(offer_type)} #{Section.enum_title(category)} в #{Russian.locative(location.title)}".capitalize
+
+    if(offer_type && category_type)
+      
+      self.title = "#{Section.enum_title(offer_type)} #{Section.enum_title(category)} в #{location.title}"
+    
+    elsif(offer_type && property_type)
+
+      self.title = "#{Section.enum_title(offer_type)} #{property_type} недвижимость в "
+
+    end
+    
   end
 
   def generate_url

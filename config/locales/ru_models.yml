@@ -36,5 +36,9 @@ ru:
           cafe: кафе
           land: землю
           free_appointment: общего назначения
+
+          #property_type
+          residental: жилая
+          commerce: нежилая
           
 

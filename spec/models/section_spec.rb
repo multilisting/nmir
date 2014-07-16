@@ -22,4 +22,5 @@ RSpec.describe Section, :type => :model do
   end
 
 
+
 end
