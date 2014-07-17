@@ -30,42 +30,27 @@ class Advertisment < ActiveRecord::Base
     define_method(method_name) { return self[from_method] }
   end
 
-  def locations(without_nils = true)
+  def locations
     HashWithIndifferentAccess.new({
-      region: region_id, district: district_id, city: city_id, admin_area: admin_area_id,
-      non_admin_area: non_admin_area_id, street: street_id, address: address_id, landmark: landmark_id
-    }).delete_if {|k, v| v.nil? }
+      region: region, district: district, city: city, admin_area: admin_area,
+      non_admin_area: non_admin_area, street: street, address: address, landmark: landmark
+    }).delete_if {|k, v| v.blank? }
   end
 
   private
 
   def generate_sections
-    locs = self.locations
-    
-    locs.each do |loc_title, loc_id|
-      # find or create by offer_type + category + each location node, setted in this advertisment
-      Section.find_or_create_by(offer_type: offer_type, category: category, location_id: loc_id )
 
+    self.locations.each do |loc_title, loc|
       # find or create by offer_type + category + each location node, setted in this advertisment
-      Section.find_or_create_by(property_type: property_type, offer_type: offer_type, location_id: loc_id )
+      SectionGenerator.by_offer_category(offer_type, category, loc)
+
+      # find or create by property_type + offer_type + each location node, setted in this advertisment
+      SectionGenerator.by_property_offer(property_type, offer_type, loc)
 
       # find or create by location node
-      Section.find_or_create_by(location_id: loc_id, offer_type: nil, property_type: nil, category: nil )
+      SectionGenerator.by_location(loc)
 
-      loc = self.send(:loc_title)
-      
-      # if location is not parent (region)
-      if !loc.nil? && !loc.parent?
-        loc_parents = Location.parent_locations(loc)
-
-        # do the same for each parent node
-        loc_parents.each do |node|
-          Section.find_or_create_by(offer_type: offer_type, category: category, location_id: node.id)
-          Section.find_or_create_by(property_type: property_type, offer_type: offer_type, location_id: node.id )
-
-          Section.find_or_create_by(location_id: node.id, offer_type: nil, property_type: nil, category: nil )
-        end
-      end
     end
 
   end
