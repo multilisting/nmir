@@ -1,40 +1,49 @@
 region:
   id: 1
   title: Ростовская область
+  location_type: 0
 
 district:
   id: 2
   title: Кущевский район
   location_id: 1
+  location_type: 1
 
 city:
   id: 3
   title: Ростов
   translit: rostov
   location_id: 2
+  location_type: 2
 
 street:
   id: 4
   title: Ленина
   location_id: 3
+  location_type: 5
 
 address:
   id: 5
   title: "к.5"
   location_id: 4
+  location_type: 6
 
 admin_area:
   id: 6
   title: asdgsadg
   location_id: 2
+  location_type: 3
 
 non_admin_area:
   id: 7
   title: asdgsadg
   location_id: 2
+  location_type: 4
 
 landmark:
   id: 8
   title: В центре
+  location_id: 5
+  location_type: 7
 
 

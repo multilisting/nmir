@@ -90,13 +90,13 @@ RSpec.describe Advertisment, :type => :model do
   describe 'is binded to locations and' do
 
     before do 
-      adv.region = locations :region
-      adv.district = locations :district
-      adv.city = locations :city
-      adv.admin_area = locations :admin_area
-      adv.non_admin_area = locations :non_admin_area
-      adv.street = locations :street
-      adv.address = locations :address
+      #adv.region = locations :region
+      #adv.district = locations :district
+      #adv.city = locations :city
+      #adv.admin_area = locations :admin_area
+      #adv.non_admin_area = locations :non_admin_area
+      #adv.street = locations :street
+      #adv.address = locations :address
       adv.landmark = locations :landmark
       adv.save 
     end
@@ -113,13 +113,12 @@ RSpec.describe Advertisment, :type => :model do
     specify { expect(adv.region(true)).to eq(region) } 
     specify { expect(adv.district(true)).to eq(district) } 
     specify { expect(adv.city(true)).to eq(city) } 
-    specify { expect(adv.admin_area(true)).to eq(admin_area) } 
-    specify { expect(adv.non_admin_area(true)).to eq(non_admin_area) } 
     specify { expect(adv.street(true)).to eq(street) } 
     specify { expect(adv.address(true)).to eq(address) } 
     specify { expect(adv.landmark(true)).to eq(landmark) } 
 
   end
+
 
 end
 

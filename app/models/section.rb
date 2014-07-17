@@ -7,8 +7,8 @@ class Section < ActiveRecord::Base
 
   #delegate :title, :translit, to: :location, prefix: true
 
-  before_save :generate_title
-  before_save :generate_url
+  #before_save :generate_title
+  #before_save :generate_url
 
   scope :not_empty, -> { where('advertisments_count > 0') }
 
@@ -16,7 +16,7 @@ class Section < ActiveRecord::Base
 
   def generate_title
 
-    if(offer_type && category_type)
+    if(offer_type && category)
       
       self.title = "#{Section.enum_title(offer_type)} #{Section.enum_title(category)} в #{location.title}"
     

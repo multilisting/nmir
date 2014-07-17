@@ -17,6 +17,7 @@ class Advertisment < ActiveRecord::Base
   # Enums
   include AdvEnums
 
+  before_create :set_locations
   after_create :generate_sections
   
   def allowed_attributes
@@ -37,7 +38,26 @@ class Advertisment < ActiveRecord::Base
     }).delete_if {|k, v| v.blank? }
   end
 
+  def locations_array
+    [region, district, city, admin_area, non_admin_area, street, address, landmark].delete_if do |l|
+      l.blank?
+    end
+  end
+
   private
+
+  # set all location nodes from one, that submited
+  def set_locations
+    self.locations.each do |loc_title, loc|
+      break if loc_title == :region
+
+      location_nodes = Location.parent_locations(loc)
+
+      location_nodes.each do |node|
+        self[ "#{node.location_type}_id" ] = node.id
+      end
+    end
+  end
 
   def generate_sections
 
@@ -52,6 +72,9 @@ class Advertisment < ActiveRecord::Base
       SectionGenerator.by_location(loc)
 
     end
+
+    
+    STDERR.puts(Section.all.inspect) 
 
   end
 
