@@ -60,22 +60,19 @@ class Advertisment < ActiveRecord::Base
   end
 
   def generate_sections
+    locations_chain_url = SectionGenerator.chain_url(locations_array.map(&:title))
 
     self.locations.each do |loc_title, loc|
       # find or create by offer_type + category + each location node, setted in this advertisment
-      SectionGenerator.by_offer_category(offer_type, category, loc)
+      SectionGenerator.by_offer_category(offer_type, category, loc, locations_chain_url)
 
       # find or create by property_type + offer_type + each location node, setted in this advertisment
-      SectionGenerator.by_property_offer(property_type, offer_type, loc)
+      SectionGenerator.by_property_offer(property_type, offer_type, loc, locations_chain_url)
 
       # find or create by location node
-      SectionGenerator.by_location(loc)
+      SectionGenerator.by_location(loc, locations_chain_url)
 
     end
-
-    
-    STDERR.puts(Section.all.inspect) 
-
   end
 
   def category_conformity

@@ -110,7 +110,8 @@ RSpec.describe Advertisment, :type => :model do
     let(:address) { locations :address}
     let(:landmark) { locations :landmark}
 
-    specify { expect(adv.region(true)).to eq(region) } 
+    specify { expect(adv.region(true)).to eq(region); } 
+      
     specify { expect(adv.district(true)).to eq(district) } 
     specify { expect(adv.city(true)).to eq(city) } 
     specify { expect(adv.street(true)).to eq(street) } 
